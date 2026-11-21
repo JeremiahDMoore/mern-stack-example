@@ -29,17 +29,17 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
         with: 
           ref: 'main-test'
 
       - name: Install server npm packages
-        uses: bahmutov/npm-install@v1
+        uses: bahmutov/npm-install@20216767ca67f0f7b4d095dc5859c5700a6581cb # v1
         with:
           working-directory: mern/server
 
       - name: Install client npm packages
-        uses: bahmutov/npm-install@v1
+        uses: bahmutov/npm-install@20216767ca67f0f7b4d095dc5859c5700a6581cb # v1
         with:
           working-directory: mern/client
 
@@ -52,7 +52,7 @@ jobs:
         run: (cd mern/client && npm start &)
 
       - name: Install Cypress and run tests
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@f5bea478b80a774068179089247f13d60abc5010 # v2
         with:
           working-directory: mern/client
         
